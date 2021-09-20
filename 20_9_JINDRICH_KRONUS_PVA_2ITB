@@ -1,0 +1,127 @@
+//PRVNI VEC
+
+static Scanner sc = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        System.out.println("Zadejte kolikati mistne ma byt pole");
+        int pole = sc.nextInt();
+        int[] pole2 = new int[pole];
+        System.out.println("Zadejte hodnoty do pole");
+        for (int i = 0; i < pole2.length; i++) {
+            pole2[i] = sc.nextInt();
+        }
+        System.out.println("Vlozte cislo o kolik indexu chcete pole posunout: ");
+        int posunPoleO = sc.nextInt();
+        System.out.println(Arrays.toString(dejVlevo(pole2,posunPoleO)));
+ 
+        
+    }
+    
+    public static int[] dejVlevo(int[] nums, int num)
+    {
+        int delka = nums.length;
+        int[] vysledek = new int[delka];
+        for (int i = 0; i < nums.length; i++) {
+            int cislo1 = 0;
+            int cislo2 = 0;
+            int cislo3 = 0;
+            
+            cislo1 = nums[i];
+            if(i+1 < delka)
+            {
+                cislo2 = nums[i+1];
+            }
+
+            if(i-1 < 0)
+            {
+                
+            }
+            else
+            {
+                cislo3 = nums[i-1];
+            }
+            nums[i] = cislo2;
+            if(i+1 < delka)
+            {
+               nums[i+1] = nums[delka-1]; 
+            }
+        }
+        return nums;
+    }
+
+
+//DRUHA VEC
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Druhavec {
+
+
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Zadejte kolikati mistne ma byt pole");
+        int pole = sc.nextInt();
+        int[] pole2 = new int[pole];
+        System.out.println("Zadejte hodnoty do pole");
+        for (int i = 0; i < pole2.length; i++) {
+            pole2[i] = sc.nextInt();
+        }
+        System.out.println("Vlozte cislo ktere chcete zjistit, kolikrat je v poli: ");
+        int hledaneCislo = sc.nextInt();
+        System.out.println(hasnum(pole2,hledaneCislo));
+ 
+
+    }
+
+    public static int hasnum(int[] nums, int num)
+    {
+        int vysledek = 0;
+        int delka = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] == num)
+            {
+                vysledek++;
+            }
+        }
+        return vysledek;
+    }
+}
+
+
+//TRETI VEC
+
+package tretivec;
+
+import java.util.Scanner;
+
+public class Tretivec {
+    static Scanner sc = new Scanner(System.in);
+
+       
+    public static void main(String[] args) {
+        System.out.println("Zadejte kolika mistne ma byt pole");
+        int pole = sc.nextInt();
+        int[] pole2 = new int[pole];
+        System.out.println("Zadejte hodnoty do pole");
+        for (int i = 0; i < pole2.length; i++) {
+            pole2[i] = sc.nextInt();
+        }
+        System.out.println(sum(pole2));
+ 
+
+    }
+
+    public static int sum(int[] nums)
+    {
+        int vysledek = 0;
+        int delka = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            vysledek += nums[i];
+        }
+        return vysledek;
+    }
+
+    }
+  
+
